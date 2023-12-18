@@ -37,6 +37,7 @@ class BdiAgent():
 
     def execute(self):
         """Based on mode executes all the steps in the plan or just """
+        """needs to be inherited"""
         if self.mode == BdiMode.blind:
             return self.plan_buffer
         else:
@@ -59,6 +60,8 @@ class BdiAgent():
         return True
 
     def update(self,percept):
+        """runs the agent in a single time-step"""
+        """"""
         self.belief_revision(percept)
         if self.mode!=BdiMode.blind and self.plan_buffer:
             self.execute()

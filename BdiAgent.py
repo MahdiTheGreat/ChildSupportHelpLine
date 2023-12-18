@@ -6,34 +6,73 @@ class BdiMode(Enum):
 
 class BdiAgent():
     def __init__(self,beliefs,intentions,mode=BdiMode.blind):
+
+        """In our example, Belief are the ontology and the reasoning and inference we can do on it"""
         self.beliefs=beliefs
+        """Boolean functions with a priority"""
         self.intentions=intentions
         self.plan_buffer=[]
         self.mode=mode
+
     def belief_revision(self,percept):
+        """Based on beliefs and the current percept"""
+        """Needs to be overwritten"""
         pass
-    def options(self):
+
+    def desires(self):
         """Based on beliefs and intentions"""
+        """In our case doesn't need to be overwritten"""
         pass
-    def succeeded(self):
-        """Based on beliefs and intentions"""
+
+    def filter(self):
+        """Based on beliefs, intentions and desires(all goals)"""
+        """updates intentions"""
+        """In our case doesn't need to be overwritten"""
         pass
-    def filter(self,desires):
-        """Based on beliefs, intentions and desires"""
+
     def plan(self):
         """Based on beliefs and intentions"""
-    def exectue(self,action):
-        """Based on actions"""
+        """updates the plan buffer"""
+        """needs to be overwritten"""
+
+    def execute(self):
+        """Based on mode executes all the steps in the plan or just """
+        if self.mode == BdiMode.blind:
+            return self.plan_buffer
+        else:
+            return self.plan_buffer.pop()
+
+    def impossible(self):
+        """Based on beliefs and intentions"""
+        return False
+
+    def succeeded(self):
+        """Based on beliefs and intentions"""
+        return False
+
+    def reconsider(self):
+        """Based on beliefs and intentions"""
+        return False
+
+    def sound(self):
+        """Based on beliefs and plan buffer"""
+        return True
+
     def update(self,percept):
         self.belief_revision(percept)
-        desires=self.options()
-        intentions=self.intentions
-        if not self.plan_buffer: self.plan_buffer=self.plan()
-        if self.mode==BdiMode.blind:
-            self.exectue(self.plan_buffer)
-        else:
-            a=self.plan_buffer.pop()
-            self.exectue(a)
+        if self.mode!=BdiMode.blind and self.plan_buffer:
+            self.execute()
+            if self.mode==BdiMode.openMinded and self.reconsider():
+                self.filter()
+            if not self.sound():
+                self.plan_buffer=self.plan()
+            return 0
+        self.filter()
+        self.plan()
+        self.execute()
+
+
+
 
 
 

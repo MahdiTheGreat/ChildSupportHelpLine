@@ -1,11 +1,15 @@
 from owlready2 import *
 
-onto = get_ontology("file://ChildSupportHelplineOntology.owx").load()
 
-for classes in list(onto.classes()):
-    print(classes) 
+def __init__():
+    onto = get_ontology("file://ChildSupportHelplineOntology.owx").load()
 
-support_seeker = onto.User("support_seeker")
-volunteer = onto.User("volunteer")
+    for classes in list(onto.classes()):
+        print(classes) 
 
-conversation = onto.Conversation("conversation")
+    support_seeker = onto.User("support_seeker")
+    volunteer = onto.User("volunteer")
+
+    conversation = onto.Conversation("conversation")
+
+    

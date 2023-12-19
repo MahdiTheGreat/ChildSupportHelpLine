@@ -17,6 +17,9 @@ class BdiAgent():
     def belief_revision(self,percept):
         """Based on beliefs and the current percept"""
         """Needs to be overwritten"""
+        """We can implement additional temporal rules based on the messages in the conversation"""
+        """E.g. if the user is sad for a period of time with a specific number of messages and response time,
+        they will be labeled as troll. A new feature based on these properties could be created to normalize them."""
         pass
 
     def desires(self):
@@ -61,7 +64,8 @@ class BdiAgent():
 
     def update(self,percept):
         """runs the agent in a single time-step"""
-        """"""
+        """The percept could be the last two messages or the entire conversation, if we want to detect someone
+        is stuck being a certain mood"""
         self.belief_revision(percept)
         if self.mode!=BdiMode.blind and self.plan_buffer:
             self.execute()
@@ -74,7 +78,10 @@ class BdiAgent():
         self.plan()
         self.execute()
 
+"""For simulating the message environment, lets have an array of objects, where each object is a message
+with a time and the troll score that has been assigned to it."""
 
+"""Dialouge actions could be implemented as triggers in the ontology"""
 
 
 

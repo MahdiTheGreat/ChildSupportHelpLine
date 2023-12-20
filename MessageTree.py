@@ -89,7 +89,7 @@ def getNextResponse(conv, message):
         best_response = tree.root.children[max_i].children[0]
         conv._chatbotTree = tree.cutTree(best_response)
     else:
-        best_response = "Default response when we get at the end of the tree or the user says something not in the tree possibilities"
+        best_response = "Sadly, as I am a chatbot, I am not able to help you to your full extent, but you are in a queue to talk to one of my human colleagues. If you just want to talk while you wait I am here for you and will be listening to what you have to say."
         conv._chatbot = False
 
     return best_response

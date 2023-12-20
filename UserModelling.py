@@ -2,14 +2,24 @@ from owlready2 import *
 
 
 def __init__():
+    """ Initialize conversation, both user model"""
     onto = get_ontology("file://ChildSupportHelplineOntology.owx").load()
 
-    for classes in list(onto.classes()):
-        print(classes) 
+    rt = onto.ResponseTime("rt1")
+    rt.hasTime.append(15)
+    rt.isShortResponseTime.append(False)
 
-    support_seeker = onto.User("support_seeker")
-    volunteer = onto.User("volunteer")
+    with onto:
+        sync_reasoner_pellet(infer_property_values=True)
 
-    conversation = onto.Conversation("conversation")
+    print(rt.hasTime)
+    print(rt.isShortResponseTime)
 
-    
+
+__init__()
+
+def sentimentAnalysis():
+    """compute emotions from the message and returns the emotions of the user"""
+
+def update():
+    """ update user model with information from message and sentiment analysis"""

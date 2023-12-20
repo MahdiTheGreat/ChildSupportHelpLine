@@ -1,0 +1,1377 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <Ontology rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei">
+        <rdfs:comment>Onthology for ChildSupportHelpline</rdfs:comment>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://webprotege.stanford.edu/hasResponseTime -->
+
+    <ObjectProperty rdf:about="http://webprotege.stanford.edu/hasResponseTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://webprotege.stanford.edu/hasTextLength -->
+
+    <ObjectProperty rdf:about="http://webprotege.stanford.edu/hasTextLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://webprotege.stanford.edu/hasVocabulary -->
+
+    <ObjectProperty rdf:about="http://webprotege.stanford.edu/hasVocabulary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Vocabulary"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasConversation -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasConversation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#HealthCond"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPersonalInfo -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPersonalInfo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#PersonalInfo"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPunctuation -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPunctuation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://webprotege.stanford.edu/hasSwearWords -->
+
+    <DatatypeProperty rdf:about="http://webprotege.stanford.edu/hasSwearWords">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Vocabulary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://webprotege.stanford.edu/isShortLength -->
+
+    <DatatypeProperty rdf:about="http://webprotege.stanford.edu/isShortLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://webprotege.stanford.edu/isShortResponseTime -->
+
+    <DatatypeProperty rdf:about="http://webprotege.stanford.edu/isShortResponseTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>isShortReponseTime</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasEatingDisorder -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasEatingDisorder">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasLength -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasTime -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isAngry -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isAngry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isBlocked -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isBlocked">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isBullied -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isBullied">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isExclamatory -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isExclamatory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isInQueue -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isInQueue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isInterrogative -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isInterrogative">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSad -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSad">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isScared -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isScared">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSexuallyAbused -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSexuallyAbused">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSuicidal -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSuicidal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isTroll -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isTroll">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Cognitive -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Cognitive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#HealthCond"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Conversation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Cognitive"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Cognitive"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#HealthCond -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#HealthCond"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#PersonalInfo -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#PersonalInfo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportAdministrator -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportAdministrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#User"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Vocabulary -->
+
+    <Class rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Vocabulary"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#up">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#up">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#rt">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#v">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#tl">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#l">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>For setting the priority of a sexually abused support seeker to two  in the queue</rdfs:comment>
+        <rdfs:label>SexuallyAbusedPriorityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSexuallyAbused"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>IsLongReponseTime</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasTime"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.w3.org/2002/07/owl#t"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/isShortResponseTime"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>IsShortResponseTime</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#ResponseTime"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasTime"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.w3.org/2002/07/owl#t"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/isShortResponseTime"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>IsShortMessage</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TextLength"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#tl"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasLength"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#tl"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#l"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.w3.org/2002/07/owl#l"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/isShortLength"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#tl"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>For setting the priority of a suicidal support seeker to one(highest priority) in the queue</rdfs:comment>
+        <rdfs:label>SuicidalPriorityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSuicidal"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#c"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#u"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>For setting the priority of a support seeker with eating disorder to four in the queue</rdfs:comment>
+        <rdfs:label>EatingDisorderPriorityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasEatingDisorder"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>For setting the priority of a bullied support seeker to three in the queue</rdfs:comment>
+        <rdfs:label>BulliedPriorityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Crisis"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isBullied"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPriority"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>UnsureScared</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasConversation"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/hasResponseTime"/>
+                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/isShortResponseTime"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#rt"/>
+                                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isScared"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>SwearingAngry</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSad"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasConversation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/hasVocabulary"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#v"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://webprotege.stanford.edu/hasSwearWords"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#v"/>
+                                                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isAngry"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>ExclamatoryAngry</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasUserProfile"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasHealthCondition"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#up"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isSad"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasConversation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#u"/>
+                                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#hasPunctuation"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#c"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isExclamatory"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                                                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#isAngry"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

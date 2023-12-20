@@ -90,8 +90,8 @@ while True:
     # conversation.append()
     conversation.append(Message(sender=Actor.SupportSeeker, text=message,time=time.time()))
     # print(conversation[-1],"\n")
+    support_help_line.update(conversation)
     print()
     if chatbot._chatbotActive:
         conversation.append(Message(sender=Actor.chatbot,text=chatbot.print_next_message(message),time=time.time()))
         print("\033[94m"+conversation[-1].text,"\033[0m\n") # The strange number are here to change the text color in the terminal
-    reply=support_help_line.update(conversation)

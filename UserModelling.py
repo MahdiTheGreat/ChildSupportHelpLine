@@ -18,8 +18,12 @@ def __init__():
 
 
 def sentimentAnalysis(message):
+<<<<<<< Updated upstream
     """compute emotions from the message and returns the emotions of the user""" 
 
+=======
+    """ Compute polarity from the message """
+>>>>>>> Stashed changes
     sentiment_pipeline = pipeline("sentiment-analysis")
     data = [message]
     result = sentiment_pipeline(data)[0]['label']

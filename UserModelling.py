@@ -1,24 +1,15 @@
 from owlready2 import *
 from transformers import pipeline
 
-def sentimentAnalysis(message):
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    """compute emotions from the message and returns the emotions of the user""" 
-=======
-    """ Compute polarity from the message """ 
->>>>>>> pr/1
+messageNb = 0
 
-=======
-    """ Compute polarity from the message """
->>>>>>> Stashed changes
+def sentimentAnalysis(message):
     sentiment_pipeline = pipeline("sentiment-analysis")
     data = [message]
     result = sentiment_pipeline(data)[0]['label']
     return result
 
 
-messageNb = 0
 def updateUserModel(message, ontology):
     """ Updates message instance by adding informations on sentiment analysis """
     

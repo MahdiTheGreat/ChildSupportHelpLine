@@ -17,9 +17,6 @@
         <Literal>Onthology for ChildSupportHelpline</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Activity"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Cognitive"/>
     </Declaration>
     <Declaration>
@@ -33,9 +30,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#HealthCond"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HelpLineConversationReq"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PersonalInfo"/>
@@ -72,9 +66,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://webprotege.stanford.edu/hasVocabulary"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasActivity"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasConversation"/>
@@ -141,6 +132,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#isSuicidal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isTroll"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
@@ -158,10 +152,6 @@
         <Class IRI="#Cognitive"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HelpLineConversationReq"/>
-        <Class IRI="#Activity"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#SupportAdministrator"/>
         <Class IRI="#User"/>
     </SubClassOf>
@@ -169,6 +159,30 @@
         <Class IRI="#SupportSeeker"/>
         <Class IRI="#User"/>
     </SubClassOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasResponseTime"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasTextLength"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasVocabulary"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasConversation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasHealthCondition"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPersonalInfo"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPunctuation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasUserProfile"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://webprotege.stanford.edu/hasResponseTime"/>
         <Class IRI="#Conversation"/>
@@ -182,12 +196,8 @@
         <Class IRI="#Conversation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasActivity"/>
-        <Class IRI="#UserProfile"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasConversation"/>
-        <Class IRI="#HelpLineConversationReq"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasHealthCondition"/>
@@ -216,10 +226,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://webprotege.stanford.edu/hasVocabulary"/>
         <Class IRI="#Vocabulary"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasActivity"/>
-        <Class IRI="#Activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasConversation"/>
@@ -241,6 +247,60 @@
         <ObjectProperty IRI="#hasUserProfile"/>
         <Class IRI="#UserProfile"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://webprotege.stanford.edu/hasSwearWords"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://webprotege.stanford.edu/isShortLength"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://webprotege.stanford.edu/isShortResponseTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasEatingDisorder"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasLength"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPriority"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isAngry"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isBlocked"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isBullied"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isExclamatory"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isInQueue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isInterrogative"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isSad"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isScared"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isSexuallyAbused"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isSuicidal"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isTroll"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="http://webprotege.stanford.edu/hasSwearWords"/>
         <Class IRI="#Vocabulary"/>
@@ -309,6 +369,10 @@
         <DataProperty IRI="#isSuicidal"/>
         <Class IRI="#Crisis"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isTroll"/>
+        <Class IRI="#SupportSeeker"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="http://webprotege.stanford.edu/hasSwearWords"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
@@ -375,6 +439,10 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#isSuicidal"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isTroll"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DLSafeRule>
@@ -594,13 +662,8 @@
                 <Variable abbreviatedIRI="owl:e"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasActivity"/>
-                <Variable abbreviatedIRI="owl:up"/>
-                <Variable abbreviatedIRI="owl:a"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
                 <ObjectProperty IRI="#hasConversation"/>
-                <Variable abbreviatedIRI="owl:a"/>
+                <Variable abbreviatedIRI="owl:u"/>
                 <Variable abbreviatedIRI="owl:c"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
@@ -660,13 +723,8 @@
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
             </DataPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasActivity"/>
-                <Variable abbreviatedIRI="owl:up"/>
-                <Variable abbreviatedIRI="owl:a"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
                 <ObjectProperty IRI="#hasConversation"/>
-                <Variable abbreviatedIRI="owl:a"/>
+                <Variable abbreviatedIRI="owl:u"/>
                 <Variable abbreviatedIRI="owl:c"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
@@ -726,13 +784,8 @@
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
             </DataPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasActivity"/>
-                <Variable abbreviatedIRI="owl:up"/>
-                <Variable abbreviatedIRI="owl:a"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
                 <ObjectProperty IRI="#hasConversation"/>
-                <Variable abbreviatedIRI="owl:a"/>
+                <Variable abbreviatedIRI="owl:u"/>
                 <Variable abbreviatedIRI="owl:c"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>

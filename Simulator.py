@@ -40,19 +40,7 @@ class Conversation:
                                            }
 class SupportHelpLineAgent(BdiAgent):
     def belief_revision(self,conversation):
-        avg_rp=0
-        avg_speed=0
-        i=1
-        n=0
-        while i<len(conversation):
-         if conversation[i].sender ==Actor.SupportSeeker:
-          for j in range(i-1,-1):
-           if conversation[j].sender != Actor.SupportSeeker:
-               new_rp=conversation[j].time-conversation[i].time
-               avg_rp=((n-1)*avg_rp+new_rp)/n
-               n+=1
-               i=j
-        self.beliefs=percept
+        pass
 
     def plan(self):
         self.plan_buffer.append('Dialouge action: '+self.beliefs)

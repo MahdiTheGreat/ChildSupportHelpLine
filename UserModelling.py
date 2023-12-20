@@ -4,7 +4,7 @@ from transformers import pipeline
 onto = get_ontology("file://ChildSupportHelplineOntology.owl").load()
 
 def __init__():
-    """ Initialize conversation, both user model"""
+    """ Initialize conversation and both user model"""
 
     rt = onto.ResponseTime()
     rt.hasTime =[15]
@@ -51,7 +51,7 @@ def update(message):
     messageInd.hasTextLength = messageLengthInd
 
     message.sender.hasConversation = messageInd
-    
+
     with onto:
         sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
 

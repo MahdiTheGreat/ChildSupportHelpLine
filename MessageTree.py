@@ -31,7 +31,7 @@ def createTree():
     # Suicide Tree
     openingTree.addChild(openingTree.root.children[0],"I'm sorry to hear that. You should never have to feel like that. Is there anything I can do for you ?")
     openingTree.addChild(openingTree.root.children[0].children[0],"not,be here,unworthy,alone,forgotten,never,change,better")
-    openingTree.addChild(openingTree.root.children[0].children[0].children[0],"I feel that it is good that you talk about this and are brave enough to open up about haw you feel. We all feel like that at some point in our life, and it always helps to talk to someone instaed of taking drastic measures")
+    openingTree.addChild(openingTree.root.children[0].children[0].children[0],"I feel that it is good that you talk about this and are brave enough to open up about haw you feel. We all feel like that at some point in our life, and it always helps to talk to someone instaed of taking drastic measures.")
     
     # Depression Tree
     openingTree.addChild(openingTree.root.children[1],"I'm sorry to hear that. Might I know what caused you feeling this way ?")
@@ -61,7 +61,8 @@ def createTree():
     openingTree.addChild(openingTree.root.children[3].children[0].children[0],"That is awful. I can definitely see why it has been a traumatic experience for you. Is there anything you want me to do for you to help you move forward ?")
     openingTree.addChild(openingTree.root.children[3].children[0],"no,forward,heal,overcome,past,move")
     openingTree.addChild(openingTree.root.children[3].children[0].children[1],"To move forward from something like this I would recommend...")
-                         
+
+    return openingTree      
 
 
 def get_message_score(word_list, message):
@@ -74,22 +75,22 @@ def get_message_score(word_list, message):
             w_count += 1
     return w_count
 
-def getNextResponse(conv, message):
+def getNextResponse(chatbot, message):
     """ Checks wich answer is the best fit """
-    tree = conv._chatbotTree
+    tree = chatbot._chatbotTree
     max_score = 0
     max_i = -1
-
     for i in range(len(tree.root.children)):
-        score = get_message_score(tree.root.children[i], message)
+        score = get_message_score(tree.root.children[i].val, message)
         if score > max_score:
+            max_score = score
             max_i = i
-    
     if max_i != -1:
         best_response = tree.root.children[max_i].children[0]
-        conv._chatbotTree = tree.cutTree(best_response)
+        chatbot._chatbotTree = tree.cutTree(best_response)
     else:
         best_response = "Sadly, as I am a chatbot, I am not able to help you to your full extent, but you are in a queue to talk to one of my human colleagues. If you just want to talk while you wait I am here for you and will be listening to what you have to say."
-        conv._chatbot = False
+        chatbot._chatbotActive = False
+        return best_response
 
-    return best_response
+    return best_response.val

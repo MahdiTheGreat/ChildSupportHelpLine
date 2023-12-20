@@ -1,24 +1,8 @@
 from owlready2 import *
 from transformers import pipeline
 
-onto = get_ontology("file://ChildSupportHelplineOntology.owl").load()
-
-def __init__():
-    """ Initialize conversation and both user model"""
-
-    rt = onto.ResponseTime()
-    rt.hasTime =[15]
-    # rt.isShortResponseTime.append(False)
-
-    with onto:
-        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-
-    print(rt.hasTime)
-    print(rt.isShortResponseTime)
-
-
 def sentimentAnalysis(message):
-    """compute emotions from the message and returns the emotions of the user""" 
+    """ Compute polarity from the message """ 
 
     sentiment_pipeline = pipeline("sentiment-analysis")
     data = [message]
@@ -26,12 +10,9 @@ def sentimentAnalysis(message):
     return result
 
 
-sentimentAnalysis("I hate life")
-
 messageNb = 0
-
-def update(message):
-    """ update user model with information from message and sentiment analysis"""
+def updateUserModel(message, ontology):
+    """ Updates message instance by adding informations on sentiment analysis """
     
     if sentimentAnalysis(message.text) == "NEGATIVE":
         message.polarity = -1
@@ -39,20 +20,33 @@ def update(message):
         message.polarity = 1
     
     messageName = "message_"+messageNb
-    
-    responseTimeInd = onto.ResponseTime("rtmessage_"+messageNb)
-    responseTimeInd.hasTime = message.time
+    messageInd = ontology.Message(messageName)
+    message.sender.hasMessage = messageInd
 
-    messageLengthInd = onto.TextLength("messagelen_"+messageNb)
-    messageLengthInd.hasLength = len(message.text)
-
-    messageInd = onto.Conversation(messageName)
-    messageInd.hasResponseTime = responseTimeInd
-    messageInd.hasTextLength = messageLengthInd
-
-    message.sender.hasConversation = messageInd
-
-    with onto:
+    with ontology:
         sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
 
+    message.angry = messageInd.hasAngryTone
+    message.scared = messageInd.hasScaredTone
+
     messageNb +=1
+
+def updateTrollProbability(conversation, ontology):
+    """ Computes the new probability for the user to be a troll """
+    pass
+
+def updateTypingSpeed(conversation, ontology):
+    """ Updates the typing speed of the user model """
+    user = conversation[-1].sender
+    supportSeekerNbMessages = len(list(filter(lambda message: message.sender == user, conversation)))
+    dt = conversation[-1].time - conversation[-2].time
+    messageSize = len(conversation[-1].text)
+
+    typing_speed = messageSize/dt
+
+    userInd = ontology.User[user.value]
+    currentAvg = userInd.TypingSpeed
+
+    updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
+    userInd.TypingSpeed = updatedAvg
+

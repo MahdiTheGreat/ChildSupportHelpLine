@@ -1,15 +1,16 @@
 from owlready2 import *
 from transformers import pipeline
 
-messageNb = 0
-
 def sentimentAnalysis(message):
+    """ Compute polarity from the message """ 
+
     sentiment_pipeline = pipeline("sentiment-analysis")
     data = [message]
     result = sentiment_pipeline(data)[0]['label']
     return result
 
 
+messageNb = 0
 def updateUserModel(message, ontology):
     """ Updates message instance by adding informations on sentiment analysis """
     
@@ -48,4 +49,3 @@ def updateTypingSpeed(conversation, ontology):
 
     updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
     userInd.TypingSpeed = updatedAvg
-

@@ -33,7 +33,6 @@ class Conversation:
         return self.log[item]
     def add_message(self,message):
         i=self.log.index(message)
-<<<<<<< Updated upstream
         typing_speed=TextBlob(message.text).word_counts/self.log[i - 1].time - message.time
         if message.sender not in self.user_inf.keys():
             self.user_inf[message.sender]={'message_number':1,'avg_speed':typing_speed}
@@ -45,29 +44,13 @@ class Conversation:
     def get_avg_typing_speed(self,sender):
         return self.user_inf[sender]['avg_speed']
 
-            
-=======
-        type_speed=TextBlob(message.text).word_counts / (self.log[i-1].time-message.time)
-        if message.sender not in self.user_inf.keys():
-            self.user_inf[message.sender]={'message_number':1,'avg_type_speed':type_speed}
-        else:
-            old_avg=self.user_inf[message.sender]['avg_speed']
-            n=self.user_inf[message.sender]['message_number']
-            self.user_inf[message.sender]['avg_speed']=(n*old_avg+type_speed)/(n+1)
-            self.user_inf[message.sender]['message_number']+=1
-    def get_typer_speed(self,user):
-        return self.user_inf[user]['avg_speed']
 
->>>>>>> Stashed changes
+
+
 class SupportHelpLineAgent(BdiAgent):
-    
     def belief_revision(self,conversation):
-<<<<<<< Updated upstream
         message=conversation[-1]
         avg_typing_speed=conversation.get_avg_typing_speed(message.sender)
-=======
-
->>>>>>> Stashed changes
 
     def plan(self):
         self.plan_buffer.append('Dialoge action: '+self.beliefs)

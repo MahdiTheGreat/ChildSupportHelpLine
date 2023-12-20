@@ -418,6 +418,82 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#emotion -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#emotion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Emotion"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#message -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#message">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Message"/>
+        <webprotege:hasVocabulary rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#vocab"/>
+        <SimSensei:hasPunctuation rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#punctuation"/>
+        <SimSensei:hasSadTone rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</SimSensei:hasSadTone>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#punctuation -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#punctuation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Punctuation"/>
+        <SimSensei:isExclamatory rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</SimSensei:isExclamatory>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#supportSeeker -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#supportSeeker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#SupportSeeker"/>
+        <SimSensei:hasTypingSpeed rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#typingSpeed"/>
+        <SimSensei:hasUserProfile rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#userProfile"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#typingSpeed -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#typingSpeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#TypingSpeed"/>
+        <SimSensei:hasSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.1</SimSensei:hasSpeed>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#userProfile -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#userProfile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#UserProfile"/>
+        <SimSensei:hasHealthCondition rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#emotion"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#vocab -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#vocab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mahdi/ontologies/2023/10/SimSensei#Vocabulary"/>
+        <webprotege:hasSwearWords rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</webprotege:hasSwearWords>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Rules
     //
     ///////////////////////////////////////////////////////////////////////////////////////

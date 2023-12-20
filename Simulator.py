@@ -46,6 +46,7 @@ class Conversation:
 
             
 class SupportHelpLineAgent(BdiAgent):
+    
     def belief_revision(self,conversation):
         message=conversation[-1]
         avg_typing_speed=conversation.get_avg_typing_speed(message.sender)

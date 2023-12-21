@@ -41,28 +41,6 @@ class Message:
          ", troll_score: "+str(self.troll)+")"
         return message
 
-# class Conversation:
-#     def __init__(self):
-#         self.log=[]
-#         self.user_inf={}
-#         self.user_message_number={}
-#         self.user_response_number={}
-#     def __getitem__(self, item):
-#         return self.log[item]
-#     def add_message(self,message):
-#         i=self.log.index(message)
-#         typing_speed=TextBlob(message.text).word_counts/self.log[i - 1].time - message.time
-#         if message.sender not in self.user_inf.keys():
-#             self.user_inf[message.sender]={'message_number':1,'avg_speed':typing_speed}
-#         else:
-#             old_avg=self.user_inf[message.sender]['avg_speed']
-#             n=self.user_inf[message.sender]['message_number']
-#             self.user_inf[message.sender]['avg_speed']=(n*old_avg+typing_speed)/(n+1)
-#             self.user_inf[message.sender]['message_number']+=1
-#     def get_avg_typing_speed(self,sender):
-#         return self.user_inf[sender]['avg_speed']
-
-
 class SupportHelpLineAgent(BdiAgent):
     def __init__(self,beliefs,intentions,mode):
         super(SupportHelpLineAgent, self).__init__(beliefs=beliefs, intentions=intentions, mode=mode)

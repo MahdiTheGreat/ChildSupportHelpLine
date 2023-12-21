@@ -22,17 +22,15 @@ def updateUserModel(message, ontology):
         message.polarity = -1
     else:
         message.polarity = 1
+    messageName = "message_" + str(messageNb)
     messageInd = ontology.Message(messageName)
     message.sender.hasMessage = messageInd
 
     with ontology:
         temp=list(ontology.inconsistent_classes())
-        pass
-        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True,debug=2).explain()
+        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True,debug=2)
         temp = list(ontology.inconsistent_classes())
-        pass
     message.angry = messageInd.hasAngryTone
-    message.scared = messageInd.hasScaredTone
 
     messageNb +=1
 
@@ -45,10 +43,10 @@ def updateTrollProbability(conversation, ontology):
     angry_messages=0
     for message in conversation:
         if message.polarity==1:positive_messages+=1
-        if message.hasAngryTone==True:angry_messages+=1
+        if message.angry==True:angry_messages+=1
     positive_message_percent=positive_messages/len(conversation)
     angry_message_percent = angry_messages / len(conversation)
-    typing_speed=ontology.get_instances_of(ontology.TypingSpeed)
+    typing_speed=ontology.get_instances_of(ontology.TypingSpeed)[0]
     if positive_message_percent>positive_message_threshold or angry_message_percent>angry_message_threshold\
         or typing_speed.isSlow==False:
         return 1

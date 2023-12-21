@@ -68,15 +68,16 @@ class BdiAgent():
         is stuck being a certain mood"""
         self.belief_revision(percept)
         if self.mode!=BdiMode.blind and self.plan_buffer:
-            self.execute()
+            actions=self.execute()
             if self.mode==BdiMode.openMinded and self.reconsider():
                 self.filter()
             if not self.sound():
                 self.plan_buffer=self.plan()
-            return 0
+            return actions
         self.filter()
         self.plan()
-        self.execute()
+        actions=self.execute()
+        return actions
 
 """For simulating the message environment, lets have an array of objects, where each object is a message
 with a time and the troll score that has been assigned to it."""

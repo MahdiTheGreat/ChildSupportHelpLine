@@ -12,20 +12,29 @@ owlready2.JAVA_EXE = "C:\\Program Files (x86)\\Java\\jre-1.8\\bin\\java.exe"
 onto = get_ontology("ChildSupportHelplineOntology.rdf")
 onto.load()
 typingSpeed=onto.TypingSpeed("typingSpeed")
-typingSpeed.hasSpeed=1.0
-temp=onto.get_instances_of(onto.TypingSpeed)
+typingSpeed.hasSpeed=1.1
+# message=onto.Message('message')
+# message.hasHappyTone=True
+pass
+
 with onto:
- sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True,debug=2).explain()
+ sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True,debug=2)
 
 
  #onto.save("buffer.owl")
 # buffer_onto = get_ontology("buffer.owl")
 # buffer_onto.load()
 
+
 temp1=onto.get_instances_of(onto.TypingSpeed)
 for instance in temp1:
- print(instance.hasSpeed)
- print(instance.isSlow)
+ speed=instance.hasSpeed
+ isSlow=instance.isSlow
+ pass
+ print(speed)
+ print(isSlow)
+
+ #print(instance.hasHappyTone)
 
 
 

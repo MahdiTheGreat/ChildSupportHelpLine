@@ -69,7 +69,7 @@ def get_message_score(word_list, message):
     """ Checks how many of the words are in the actual message"""
     w_count = 0
     parsed_word_list = word_list.lower().split(',')
-    parsed_message = message.lower()
+    parsed_message = message.text.lower()
     for word in parsed_word_list:
         if word in parsed_message:
             w_count += 1

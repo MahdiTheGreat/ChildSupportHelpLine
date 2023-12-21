@@ -61,9 +61,6 @@ class SupportHelpLineAgent(BdiAgent):
         dialouge_action=self.chatbot.print_next_message(self.current_message)
         self.plan_buffer.append(dialouge_action)
 
-    def execute(self):
-        action=super(SupportHelpLineAgent, self).execute()
-        return action
 
 class Chatbot:
     def __init__(self):
@@ -84,8 +81,10 @@ chatbot = Chatbot()
 while True:
     message=input()
     conversation.append(Message(sender=Actor.SupportSeeker, text=message,time=time.time()))
+    print(conversation[-1])
     reply=support_help_line.update(conversation)
     conversation.append(Message(sender=Actor.chatbot,text=reply,time=time.time()))
+    print(conversation[-1])
 
     #if chatbot._chatbotActive:
     #    conversation.append(Message(sender=Actor.chatbot,text=chatbot.print_next_message(message),time=time.time()))

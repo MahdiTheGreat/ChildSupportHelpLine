@@ -1,12 +1,12 @@
 from owlready2 import *
-#from transformers import pipeline
+# from transformers import pipeline
 from random import random
 
 def sentimentAnalysis(message):
     """ Compute polarity from the message """
-    #sentiment_pipeline = pipeline("sentiment-analysis")
-    #data = [message]
-    #result = sentiment_pipeline(data)[0]['label']
+    # sentiment_pipeline = pipeline("sentiment-analysis")
+    # data = [message]
+    # result = sentiment_pipeline(data)[0]['label']
     result= "NEGATIVE" if random()>0.5 else "POSITIVE"
     return result
 
@@ -28,7 +28,7 @@ def updateUserModel(message, ontology):
 
     with ontology:
         temp=list(ontology.inconsistent_classes())
-        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True,debug=2)
+        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
         temp = list(ontology.inconsistent_classes())
     message.angry = messageInd.hasAngryTone
 
@@ -49,8 +49,8 @@ def updateTrollProbability(conversation, ontology):
     typing_speed=ontology.get_instances_of(ontology.TypingSpeed)[0]
     if positive_message_percent>positive_message_threshold or angry_message_percent>angry_message_threshold\
         or typing_speed.isSlow==False:
-        return 1
-    else:return 0
+        return True
+    else:return False
 
 
 def updateTypingSpeed(conversation, ontology):

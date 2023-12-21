@@ -25,7 +25,7 @@ vocab=onto.Vocabulary('vocab')
 crisis=onto.Crisis('crisis')
 
 class Message:
-    def __init__(self,sender,text,time,polarity=False,angry=0.0,scared=0.0,troll=0.0):
+    def __init__(self,sender,text,time,polarity=0,angry=False,scared=False,troll=False):
         self.sender = sender
         self.text = text
         self.time = time
@@ -80,9 +80,10 @@ chatbot = Chatbot()
 
 while True:
     message=input()
-    conversation.append(Message(sender=Actor.SupportSeeker, text=message,time=time.time()))
-    print(conversation[-1])
+    temp=Message(sender=Actor.SupportSeeker, text=message,time=time.time())
+    conversation.append(temp)
     reply=support_help_line.update(conversation)
+    print(temp)
     conversation.append(Message(sender=Actor.chatbot,text=reply,time=time.time()))
     print(conversation[-1])
 

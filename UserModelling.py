@@ -52,19 +52,21 @@ def updateTrollProbability(conversation, ontology):
 
 def updateTypingSpeed(conversation, ontology):
     """ Update the typing speed of the user model"""
+    """ Update the typing speed of the user model"""
     user = conversation[-1].sender
     supportSeekerNbMessages = len(list(filter(lambda message: message.sender == user, conversation)))
     dt = conversation[-1].time - conversation[-2].time
     messageSize = len(conversation[-1].text)
-    typing_speed = messageSize/dt
-    currentAvg = ontology.TypingSpeed[0].hasSpeed
-    temp = ontology.get_instances_of(ontology.SupportSeeker)
-    pass
-    userInd = ontology.SupportSeeker[user.value]
-    pass
-    currentAvg = userInd.TypingSpeed
+    typing_speed = messageSize / dt
 
-    updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
-    ontology.TypingSpeed[0].hasSpeed = updatedAvg
+    currentAvg = ontology.TypingSpeed.instances()[0].hasSpeed
+
+    if currentAvg == None:
+        ontology.TypingSpeed.instances()[0].hasSpeed = typing_speed
+    else:
+        updatedAvg = (currentAvg * (supportSeekerNbMessages - 1) + typing_speed) / supportSeekerNbMessages
+        ontology.TypingSpeed.instances()[0].hasSpeed = updatedAvg
+
+
 
 

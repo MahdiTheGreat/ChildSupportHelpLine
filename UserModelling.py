@@ -57,10 +57,10 @@ def updateTypingSpeed(conversation, ontology):
     messageSize = len(conversation[-1].text)
 
     typing_speed = messageSize/dt
-    temp=ontology.User
-    temp2 = ontology.get_instances_of(ontology.)
+    temp = ontology.get_instances_of(ontology.SupportSeeker)
     pass
-    userInd = temp[0]
+    userInd = ontology.SupportSeeker[user.value]
+    pass
     currentAvg = userInd.TypingSpeed
 
     updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages

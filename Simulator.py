@@ -6,6 +6,7 @@ from MessageTree import createTree, getNextResponse
 from UserModelling import updateUserModel,updateTypingSpeed,updateTrollProbability
 from owlready2 import *
 
+
 class Actor(Enum):
     SupportSeeker='supportSeeker'
     chatbot='chatbot'
@@ -15,14 +16,16 @@ onto = get_ontology("ChildSupportHelplineOntology.rdf")
 onto.load()
 # with onto:
 #  sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True)
-emotion=onto.Emotion("emotion")
-message=onto.Message("message")
-punc=onto.Punctuation('punctuation')
-typingSpeed=onto.TypingSpeed('typingSpeed')
+
 supportSeeker=onto.SupportSeeker(Actor.SupportSeeker.value)
 userProfile=onto.UserProfile('userProfile')
-vocab=onto.Vocabulary('vocab')
+emotion=onto.Emotion("emotion")
 crisis=onto.Crisis('crisis')
+userProfile.hasHealthCondition=emotion
+userProfile.hasCrisis=crisis
+supportSeeker.hasUserProfile=userProfile
+typingSpeed=onto.TypingSpeed('typingSpeed')
+supportSeeker.hasTypingSpeed=typingSpeed
 
 class Message:
     def __init__(self,sender,text,time,polarity=0,angry=False,scared=False,troll=False):

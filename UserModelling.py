@@ -1,13 +1,15 @@
 from owlready2 import *
 from transformers import pipeline
 from random import random
+from better_profanity import profanity
+
 
 def sentimentAnalysis(message):
     """ Compute polarity from the message """
-    sentiment_pipeline = pipeline("sentiment-analysis")
-    data = [message]
-    result = sentiment_pipeline(data)[0]['label']
-    #result= "NEGATIVE" if random()>0.5 else "POSITIVE"
+    # sentiment_pipeline = pipeline("sentiment-analysis")
+    # data = [message]
+    # result = sentiment_pipeline(data)[0]['label']
+    result= "NEGATIVE" if random()>0.5 else "POSITIVE"
     return result
 
 
@@ -17,21 +19,26 @@ messageNb = 0
 def updateUserModel(message, ontology):
     """ Updates message instance by adding informations on sentiment analysis """
     global messageNb
+    messageName = "message_" + str(messageNb)
+    messageInd = ontology.Message(messageName)
+    messageVocab=ontology.Vocabulary(messageName+'vocab')
+    messageInd.hasVocabulary=messageVocab
+    message.sender.hasMessage = messageInd
 
     if sentimentAnalysis(message.text) == "NEGATIVE":
         message.polarity = -1
+        messageInd.hasSadTone=True
     else:
         message.polarity = 1
-    messageName = "message_" + str(messageNb)
-    messageInd = ontology.Message(messageName)
-    message.sender.hasMessage = messageInd
+        messageInd.hasSadTone = False
 
+    if profanity.contains_profanity(message.text):
+        messageVocab.hasSwearWords=True
+    else:
+        messageVocab.hasSwearWords = False
     with ontology:
-        temp=list(ontology.inconsistent_classes())
         sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
-        temp = list(ontology.inconsistent_classes())
     message.angry = messageInd.hasAngryTone
-
     messageNb +=1
 
 def updateTrollProbability(conversation, ontology):
@@ -47,6 +54,7 @@ def updateTrollProbability(conversation, ontology):
     positive_message_percent=positive_messages/len(conversation)
     angry_message_percent = angry_messages / len(conversation)
     typing_speed=ontology.get_instances_of(ontology.TypingSpeed)[0]
+    pass
     if positive_message_percent>positive_message_threshold or angry_message_percent>angry_message_threshold\
         or typing_speed.isSlow==False:
         return True

@@ -31,13 +31,12 @@ class Message:
         self.time = time
         self.polarity = polarity
         self.angry = angry
-        self.scared =scared
         self.troll=troll
     def __str__(self):
         message="["+self.sender.value+"]: "+self.text
         if self.sender==Actor.SupportSeeker:
             message+=" (polarity: "+str(self.polarity)+\
-         ", angryness: "+str(self.angry)+', scaredness: '+str(self.scared)+\
+         ", angryness: "+str(self.angry)+\
          ", troll_score: "+str(self.troll)+")"
         return message
 

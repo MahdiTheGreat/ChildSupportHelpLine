@@ -1,13 +1,13 @@
 from owlready2 import *
-# from transformers import pipeline
+from transformers import pipeline
 from random import random
 
 def sentimentAnalysis(message):
     """ Compute polarity from the message """
-    # sentiment_pipeline = pipeline("sentiment-analysis")
-    # data = [message]
-    # result = sentiment_pipeline(data)[0]['label']
-    result= "NEGATIVE" if random()>0.5 else "POSITIVE"
+    sentiment_pipeline = pipeline("sentiment-analysis")
+    data = [message]
+    result = sentiment_pipeline(data)[0]['label']
+    #result= "NEGATIVE" if random()>0.5 else "POSITIVE"
     return result
 
 

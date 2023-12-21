@@ -22,17 +22,26 @@ def updateUserModel(message, ontology):
         message.polarity = -1
     else:
         message.polarity = 1
+<<<<<<< HEAD
 
     messageName = "message_" + str(messageNb)
+=======
+    
+    messageName = "message_"+ str(messageNb)
+>>>>>>> 237afafa8be668e34ca78fe7fd2819f4129d40ed
     messageInd = ontology.Message(messageName)
     message.sender.hasMessage = messageInd
 
     with ontology:
+<<<<<<< HEAD
         temp=list(ontology.inconsistent_classes())
         pass
         sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True,debug=2).explain()
         temp = list(ontology.inconsistent_classes())
         pass
+=======
+        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True, debug=2).explain()
+>>>>>>> 237afafa8be668e34ca78fe7fd2819f4129d40ed
 
     message.angry = messageInd.hasAngryTone
     message.scared = messageInd.hasScaredTone

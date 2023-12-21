@@ -82,9 +82,11 @@ chatbot = Chatbot()
 
 while True:
     message=input()
+    message="\033[94m"+message+"\033[0m\n"
     temp=Message(sender=Actor.SupportSeeker, text=message,time=time.time())
     conversation.append(temp)
     reply=support_help_line.update(conversation)
+    reply="\033[94m"+reply+"\033[0m\n"
     print(temp)
     conversation.append(Message(sender=Actor.chatbot,text=reply,time=time.time()))
     print(conversation[-1])

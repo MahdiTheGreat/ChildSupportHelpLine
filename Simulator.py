@@ -97,7 +97,7 @@ class Chatbot:
 
 support_help_line=SupportHelpLineAgent(beliefs=onto,intentions=None,mode=BdiMode.singleMinded)
 
-conversation=[Message(sender=Actor.chatbot,text="Hello! What kind of crisis are you feeling? Please select one from Suicide, Depression, Eating Disorder and Sexual Abuse.",time=time.time())]
+conversation=[Message(sender=Actor.chatbot,text="\033[94m Hello! You are in the queue and will talk to a human as soon as possible. In the meantime we can chat a little if you want ! What is the reason of your call? Please select one from Suicide, Depression, Eating Disorder and Sexual Abuse.\033[0m\n",time=time.time())]
 
 print(conversation[-1],"\n")
 

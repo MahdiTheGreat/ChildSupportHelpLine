@@ -13,18 +13,19 @@ def sentimentAnalysis(message):
 messageNb = 0
 def updateUserModel(message, ontology):
     """ Updates message instance by adding informations on sentiment analysis """
-    
+    global messageNb
+
     if sentimentAnalysis(message.text) == "NEGATIVE":
         message.polarity = -1
     else:
         message.polarity = 1
     
-    messageName = "message_"+messageNb
+    messageName = "message_"+ str(messageNb)
     messageInd = ontology.Message(messageName)
     message.sender.hasMessage = messageInd
 
     with ontology:
-        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
+        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True, debug=2).explain()
 
     message.angry = messageInd.hasAngryTone
     message.scared = messageInd.hasScaredTone
@@ -57,14 +58,13 @@ def updateTypingSpeed(conversation, ontology):
     dt = conversation[-1].time - conversation[-2].time
     messageSize = len(conversation[-1].text)
     typing_speed = messageSize/dt
-    currentAvg = ontology.TypingSpeed[0].hasSpeed
-    temp = ontology.get_instances_of(ontology.SupportSeeker)
-    pass
-    userInd = ontology.SupportSeeker[user.value]
-    pass
-    currentAvg = userInd.TypingSpeed
 
-    updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
-    ontology.TypingSpeed[0].hasSpeed = updatedAvg
+    currentAvg = ontology.TypingSpeed.instances()[0].hasSpeed
+    
+    if currentAvg == None:
+        ontology.TypingSpeed.instances()[0].hasSpeed = typing_speed
+    else:
+        updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
+        ontology.TypingSpeed['typingSpeed'].hasSpeed = updatedAvg
 
 

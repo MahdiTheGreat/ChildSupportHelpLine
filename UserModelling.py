@@ -14,18 +14,19 @@ def sentimentAnalysis(message):
 messageNb = 0
 def updateUserModel(message, ontology):
     """ Updates message instance by adding informations on sentiment analysis """
-    
+    global messageNb
+
     if sentimentAnalysis(message.text) == "NEGATIVE":
         message.polarity = -1
     else:
         message.polarity = 1
     
-    messageName = "message_"+messageNb
+    messageName = "message_"+ str(messageNb)
     messageInd = ontology.Message(messageName)
     message.sender.hasMessage = messageInd
 
     with ontology:
-        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
+        sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True, debug=2).explain()
 
     message.angry = messageInd.hasAngryTone
     message.scared = messageInd.hasScaredTone

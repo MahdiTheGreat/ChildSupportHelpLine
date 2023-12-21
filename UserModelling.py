@@ -32,10 +32,6 @@ def updateUserModel(message, ontology):
     messageNb +=1
 
 def updateTrollProbability(conversation, ontology):
-<<<<<<< HEAD
-    """ Computes the new probability of the"""
-    pass
-=======
     """ Computes the new probability for the user to be a troll """
     """Some temporal analysis can be done here"""
     positive_message_threshold=0.7
@@ -53,7 +49,6 @@ def updateTrollProbability(conversation, ontology):
         return 1
     else:return 0
 
->>>>>>> main
 
 def updateTypingSpeed(conversation, ontology):
     """ Update the typing speed of the user model"""
@@ -61,18 +56,13 @@ def updateTypingSpeed(conversation, ontology):
     supportSeekerNbMessages = len(list(filter(lambda message: message.sender == user, conversation)))
     dt = conversation[-1].time - conversation[-2].time
     messageSize = len(conversation[-1].text)
-
     typing_speed = messageSize/dt
-<<<<<<< HEAD
-
     currentAvg = ontology.TypingSpeed[0].hasSpeed
-=======
     temp = ontology.get_instances_of(ontology.SupportSeeker)
     pass
     userInd = ontology.SupportSeeker[user.value]
     pass
     currentAvg = userInd.TypingSpeed
->>>>>>> main
 
     updatedAvg = (currentAvg * (supportSeekerNbMessages-1) + typing_speed) / supportSeekerNbMessages
     ontology.TypingSpeed[0].hasSpeed = updatedAvg
